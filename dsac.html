@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .container {
+        background-color: black;
+        padding: 20px 20px 20px 20px;
+        justify-content: center;
+        /* text-align: center; */
+        margin: 100px 100px 100px 100px;
+        color: white;
+
+    }
+</style>
+
+<body>
+    <h1>How to create dynamicaliy array </h1>
+    <div class="container">
+        <p>
+            #include &lt;stdio.h&gt;<br>
+            #include &lt;stdlib.h&gt;<br>
+            struct array{<br>
+            int tsize;<br>
+            int usize;<br>
+            int *ptr;<br>
+
+            };<br>
+            void createarray(struct array *p,int u,int t ){<br>
+            p->tsize=t;<br>
+            p->usize=u;<br>
+            p->ptr=(int*)malloc((p->tsize)*sizeof(int));<br>
+            }<br>
+            void putvalue(struct array *p){<br>
+            for(int i=0;i&lt;p->usize;i++){<br>
+            int n;<br>
+            printf("enter the value of index %d",i);<br>
+            scanf("%d",&n);<br>
+            (p->ptr)[i]=n;<br>
+            }<br>
+            }<br>
+            void getvalue(struct array *p){<br>
+            for(int i=0;i&lt;p->usize;i++){<br>
+            printf("element at index %d is %d",i,(p->ptr)[i]);<br>
+            }<br>
+
+            }<br>
+
+            int main()<br>
+            {struct array *p;<br>
+            p=(struct array*)malloc(sizeof(struct array));<br>
+            createarray(p,3,5);<br>
+            putvalue(p);<br>
+            getvalue(p);<br>
+
+            return 0;<br>
+            }<br>
+        </p>
+    </div>
+    <h1> Or we can also do like this:-</h1>
+    <div class="container">
+        <p>
+            #include &lt;stdio.h&gt;<br>
+            #include &lt;stdlib.h&gt;<br>
+            struct array{<br>
+            int tsize;<br>
+            int usize;<br>
+            int *ptr;<br>
+
+            };<br>
+            void createarray(struct array *p,int u,int t ){<br>
+            p->tsize=t;<br>
+            p->usize=u;<br>
+            p->ptr=(int*)malloc((t)*sizeof(int));<br>
+            }<br>
+            void putvalue(struct array *p){<br>
+            int n;<br>
+            for(int i=0;i&lt;p->usize;i++){<br>
+            printf("enter the value of index %d ",i);<br>
+            scanf("%d",&n);<br>
+            (p->ptr)[i]=n;<br>
+            }<br>
+            }<br>
+            void getvalue(struct array *p){<br>
+            for(int i=0;i&lt;p->usize;i++){<br>
+            printf("element at index %d is %d",i,(p->ptr)[i]);<br>
+            }<br>
+
+            }<br>
+
+            int main()<br>
+            {struct array p;<br>
+            createarray(&p,3,5);<br>
+            putvalue(&p);<br>
+            getvalue(&p);<br>
+
+            return 0;<br>
+            }<br>
+        </p>
+    </div>
+</body>
+
+</html>
